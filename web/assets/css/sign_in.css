@@ -1,0 +1,27 @@
+#logo{
+    height: 350px;
+    width: 350px;
+}
+
+input[type=text], input[type=password]{
+    border-radius: 5px;
+    border: none;
+}
+
+input[type=text]:focus, input[type=password]:focus{
+    outline: none;
+}
+
+.margin-top-sm {
+    margin-top: 10px;
+}
+
+.small_btn {
+    height: 25px;
+    margin-bottom: 5px;
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+}
