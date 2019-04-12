@@ -8,21 +8,39 @@
         <link rel="stylesheet" href="https://oyoclass.s3.amazonaws.com/fontawesome-pro-5.0.13/web-fonts-with-css/css/fontawesome-all.min.css">
     </head>
     <body class="bg-dark">
+        <nav class="navbar navbar-light bg-dark">
+              <a class="navbar-brand" href="#">
+                  <img src="assets/images/smart_air_logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                  <span class="text-white">Smart Air</span>
+              </a>
+              <form id="sign_in_form" class="form-inline navbar-form">
+                  <input id="email" type="text" class="margin-right-xs" placeholder="Email">
+                  <input id="password" type="password" class="margin-right-xs" placeholder="Password">
+                  <button id="show_password" class="bg-light btn btn-sm small_btn margin-top-xs margin-right-xs" type="button" name="button"><i class="fal fa-eye-slash"></i></button>
+                  <button class="btn btn-sm btn-primary my-2 my-sm-0" type="submit">Sign In</button>
+              </form>
+        </nav>
         <div class="container">
             <div class="row">
-                <div class="offset-3 col-6 text-center">
+                <div class="offset-3 col-6 text-center margin-top-md">
                     <img id="logo" src="assets/images/smart_air_logo.png" alt="">
                 </div>
-                <div class="col-3"></div>
-                <div class="text-center col-12">
-                    <input class="col-4 text-center" type="text" name="" value="" placeholder="Email">
-                </div>
-                <div class="col-12 margin-top-sm">
-                    <input id="password" class="text-center offset-4 col-4" type="password" name="" value="" placeholder="Password">
-                    <button id="show_password" class="bg-light btn btn-sm small_btn" type="button" name="button"><i class="fal fa-eye-slash"></i></button>
-                </div>
+                <form id="sign_up_form" class="col-12">
+                    <div class="col-3"></div>
+                    <div class="text-center col-12">
+                        <input id="sign_up_email" class="col-4 text-center" type="text" name="" value="" placeholder="Email">
+                    </div>
+                    <div class="col-12 margin-top-sm">
+                        <input id="sign_up_password" class="text-center offset-4 col-4" type="password" name="" value="" placeholder="Password">
+                        <button id="sign_up_show_password" class="bg-light btn btn-sm small_btn" type="button" name="button"><i class="fal fa-eye-slash"></i></button>
+                    </div>
+                    <div class="col-12 margin-top-sm">
+                        <button id="sign_up" class="btn btn-primary btn-sm offset-4 col-4" type="submit" name="button">Sign Up <i class="far fa-user-plus"></i></button>
+                    </div>
+                </form>
             </div>
         </div>
+        <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
