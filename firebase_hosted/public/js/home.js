@@ -26,7 +26,7 @@ $(document).ready(function () {
         // User is signed in.
       } else {
         // No user is signed in.
-        window.location = "sign_in.html";
+        window.location = "/";
       }
     });
 
