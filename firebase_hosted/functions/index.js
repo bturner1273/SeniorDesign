@@ -24,6 +24,10 @@ app.get('/home.html', (req, res) => {
     res.render('home');
 });
 
+app.get('*', function(req, res){
+  res.send('Sorry this page does not exist!', 404);
+});
+
 
 // // Create and Deploy Your First Cloud Functions
 // // https://firebase.google.com/docs/functions/write-firebase-functions
