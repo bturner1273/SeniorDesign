@@ -66,7 +66,14 @@ $(document).ready(function () {
                 console.log(err);
             }
         )
-    })
+    });
+
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        // User is signed in.
+        window.location = "home.html";
+      }
+    });
 
     function addInputSubmitEvent(form, input) {
         input.onkeydown = function(e) {

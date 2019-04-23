@@ -1,0 +1,30 @@
+"private data" : {
+    "users" : [
+        {
+            "user_id" : "asd234589asefmxbwe3",
+            "connected devices" : [
+                {
+                    "name" : "master_esp",
+                    "h2" : 2000,
+                    "o2" : 209500,
+                    "co2" : 400,
+                    "temperature" : 72.43,
+                    "humidity" : 40.40
+                }
+                {
+                    "name" : "outlet_controller_0",
+                    "connected devices" : [
+                        {
+                            "name" : "ac",
+                            "on" : 1
+                        }
+                        {
+                            "name" : "dehumidifier",
+                            "on" : 0
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
