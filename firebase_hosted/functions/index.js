@@ -8,6 +8,7 @@ const firebaseApp = firebase.initializeApp(
     functions.config().firebase
 );
 
+var esp_num = 0;
 
 
 app.engine('hbs', engines.handlebars);
@@ -24,7 +25,14 @@ app.get('/home.html', (req, res) => {
     res.render('home');
 });
 
-app.get('*', function(req, res){
+app.get('/esp/unique_id', (req, res) => {
+    // PUT CACHE CONTROL BACK AFTER TEST
+    // res.set('Cache-Control', 'public, max-age=300, s-maxage=600');
+    res.send({unique_id:esp_num});
+    esp_num++;
+})
+
+app.get('*', (req, res) => {
   res.send('Sorry this page does not exist!', 404);
 });
 
