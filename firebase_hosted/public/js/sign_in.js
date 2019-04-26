@@ -1,16 +1,4 @@
 $(document).ready(function () {
-// FIREBASE INIT
-    var config = {
-        apiKey: "AIzaSyDi8KqMpIHqShxR2WJZO3eto5BL2mnObl0",
-        authDomain: "smart-air-810ae.firebaseapp.com",
-        databaseURL: "https://smart-air-810ae.firebaseio.com",
-        projectId: "smart-air-810ae",
-        storageBucket: "smart-air-810ae.appspot.com",
-        messagingSenderId: "495437676642"
-    };
-    firebase.initializeApp(config);
-// END FIREBASE INIT
-
 //binds the login form to submit on enter key press in the password text input
     addInputSubmitEvent($("#sign_up_form"), $("#sign_up_password"));
     addInputSubmitEvent($("#sign_in_form"), $("#password"));
