@@ -1,4 +1,13 @@
 $(document).ready(function(){
+    var key;
+    $.ajax({
+        url: "/key",
+        contentType: "application/json",
+        success: function (res) {
+            key = res.key;
+        }
+    });
+
     var config = {
         apiKey: "AIzaSyDi8KqMpIHqShxR2WJZO3eto5BL2mnObl0",
         authDomain: "smart-air-810ae.firebaseapp.com",

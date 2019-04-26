@@ -1,5 +1,8 @@
 $(document).ready(function () {
-//binds the login form to submit on enter key press in the password text input
+    var sign_up = false;
+
+
+    //binds the login form to submit on enter key press in the password text input
     addInputSubmitEvent($("#sign_up_form"), $("#sign_up_password"));
     addInputSubmitEvent($("#sign_in_form"), $("#password"));
     bind_show_password("show_password","password");
@@ -46,6 +49,7 @@ $(document).ready(function () {
         firebase.auth().createUserWithEmailAndPassword(email, password)
         .then(
             function (user) {
+                sign_up = true;
                 console.log(user);
             }
         )
@@ -58,6 +62,9 @@ $(document).ready(function () {
 
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
+        if (sign_up) {
+            //push user to db
+        }
         // User is signed in.
         window.location = "home.html";
       }
