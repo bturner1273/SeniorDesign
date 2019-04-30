@@ -64,11 +64,6 @@ $(document).ready(function () {
       if (user) {
         if (sign_up) {
             //push user to db
-            uid = user.uid;
-            firebase.database().ref("private/users/" + user.uid).set({
-                esp_num: 0,
-                email: user.email
-            });
         }
         // User is signed in.
         window.location = "home.html";

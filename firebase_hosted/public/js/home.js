@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    var uid;
     $("#sign_out").click(function () {
         sign_out();
     });
@@ -13,9 +14,8 @@ $(document).ready(function () {
 
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
-        // User is signed in.
+        // User is signed in
         console.log(user);
-        console.log(user.email);
       } else {
         // No user is signed in.
         window.location = "/";
