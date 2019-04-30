@@ -32,6 +32,10 @@ app.get('/esp/unique_id', (req, res) => {
     esp_num++;
 })
 
+app.get('/esp/service_key', (req, res) => {
+    res.send({service_key:"W6ifglJeWnDehqxEDpRQK3HVeTbHVsVLMgtHl2Td"});
+});
+
 app.get('/key', (req, res) => {
     res.set('Cache-Control', 'public, max-age=300, s-maxage=600');
     res.send({key: "AIzaSyDi8KqMpIHqShxR2WJZO3eto5BL2mnObl0"});
