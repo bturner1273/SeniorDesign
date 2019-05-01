@@ -8,7 +8,7 @@ var notify = (function () {
     }
     err = function (txt, timeout, manualClose) {
         var n = new Noty({
-            text: "<b>" + txt + "</b>", type: "success", layout: "topCenter"
+            text: "<b>" + txt + "</b>", type: "error", layout: "topCenter"
         }).show();
         setTimeout(function () {n.close();}, timeout === undefined ? 3000 : timeout);
     }
