@@ -1,7 +1,4 @@
 $(document).ready(function () {
-    var sign_up = false;
-
-
     //binds the login form to submit on enter key press in the password text input
     addInputSubmitEvent($("#sign_up_form"), $("#sign_up_password"));
     addInputSubmitEvent($("#sign_in_form"), $("#password"));
@@ -66,7 +63,6 @@ $(document).ready(function () {
             //push user to db
             uid = user.uid;
             firebase.database().ref("private/users/" + user.uid).set({
-                esp_num: 0,
                 email: user.email
             });
         }

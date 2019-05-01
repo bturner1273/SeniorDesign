@@ -20,11 +20,20 @@ var user_email;
         // console.log(user.uid);
         uid = user.uid;
         user_email = user.email;
+        console.log(uid + " " + user_email);
+        firebase.database().ref("/private/users").once('value', function (snap) {
+            if (snap.hasChild(uid)) {
+                console.log("User already in db");
+            } else firebase.database().ref("private/users/" + uid).set({email:user_email});
+        })
+
       } else {
         // No user is signed in.
-        window.location = "/";
+        window.location = "sign_in.html";
       }
     });
+
+
 
     $("#connect_user_to_device").click(function () {
         var id_val = $("#device_id").val();

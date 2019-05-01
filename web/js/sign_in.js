@@ -62,9 +62,6 @@ $(document).ready(function () {
 
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
-        if (sign_up) {
-            //push user to db
-        }
         // User is signed in.
         window.location = "home.html";
       }
