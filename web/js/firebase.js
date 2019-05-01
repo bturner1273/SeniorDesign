@@ -1,4 +1,4 @@
-$(document).ready(function(){
+
     // var key;
     // $.ajax({
     //     url: "/key",
@@ -17,4 +17,3 @@ $(document).ready(function(){
         messagingSenderId: "495437676642"
     };
     firebase.initializeApp(config);
-});

@@ -5,3 +5,10 @@
 .card{
     margin-top: 20px;
 }
+
+.modal input[type="text"]{
+    margin-left: 10px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
