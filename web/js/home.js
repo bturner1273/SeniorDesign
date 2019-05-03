@@ -28,17 +28,14 @@ var device_key;
             $("#user_email").text(user_email);
             has_device();
             get_datum();
+            $("#user_city").val("New York");
+            $("#search_weather").click();
         });
       } else {
         // No user is signed in.
         window.location = "sign_in.html";
       }
     });
-
-    firebase.database().ref("/private/users/" + uid).on("value", function () {
-
-    });
-
 
     function has_device () {
         firebase.database().ref("/private/users/" + uid).once("value", function (snap) {
@@ -131,9 +128,40 @@ var device_key;
 
     $("#search_weather").click(function () {
         console.log("Searching for your weather");
-        var key = "f6a7895fe7c7452588589e1c728e95c4";
-        
+        firebase.database().ref("/private/users/" + uid + "/city").set($("#user_city").val());
+        find_weather_details();
     });
+
+    function http_request_async(url, callback)
+    {
+        var httpRequest = new XMLHttpRequest();
+        httpRequest.onreadystatechange = () => {
+            if (httpRequest.readyState == 4 && httpRequest.status == 200)
+                callback(httpRequest.responseText);
+        }
+        httpRequest.open("GET", url, true); // true for asynchronous
+        httpRequest.send();
+    }
+
+    function find_weather_details() {
+        var key = "f6a7895fe7c7452588589e1c728e95c4";
+        if ($("#user_city").val() === "") {
+
+        }else {
+            let searchLink = "https://api.openweathermap.org/data/2.5/weather?q=" + $("#user_city").val() + "&appid="+key;
+            http_request_async(searchLink, _response);
+         }
+     }
+     function _response(response) {
+         var temperature = $("#temperature");
+         var humidity = $("#humidity");
+         var icon = $("#icon");
+         var jsonObject = JSON.parse(response);
+         // cityName.innerHTML = jsonObject.name;
+         icon.attr("src", "http://openweathermap.org/img/w/" + jsonObject.weather[0].icon + ".png");
+         temperature.html(parseInt(1.8*(jsonObject.main.temp - 273)+32) + "°F");
+         humidity.html(jsonObject.main.humidity + "%");
+     }
 
     function load_graph (co2, h2, hum, o2, temp) {
         //do plotting here

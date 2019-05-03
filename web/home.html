@@ -37,14 +37,17 @@
                     <h4>Weather in your area</h4>
                     <div class="row">
                         <div class="col-3"></div>
-                        <input type="text" class="col-6" name="" value="" placeholder="Your City">
+                        <input id="user_city" type="text" class="col-6" name="" value="" placeholder="Your City">
                         <button id="search_weather" type="button" class="btn btn-dark col-3" name="button">Search Weather</button>
                     </div>
                     <div class="text-center">
-                        <h5>Temperature: XX degrees Fahrenheit</h5>
+                        <h5>Weather: <img id="icon" src="" alt=""></h5>
                     </div>
                     <div class="text-center">
-                        <h5>Humidity: XX%</h5>
+                        <h5>Temperature: <span id="temperature"></span></h5>
+                    </div>
+                    <div class="text-center">
+                        <h5>Humidity: <span id="humidity"></span></h5>
                     </div>
                 </div>
             </div>
