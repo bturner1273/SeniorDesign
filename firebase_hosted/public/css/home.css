@@ -1,0 +1,47 @@
+.card-body{
+    height: 20em;
+    width: 100%;
+}
+
+.card{
+    margin-top: 20px;
+}
+
+.card div h5 {
+    margin-top: 30px;
+}
+
+.modal input[type="text"]{
+    margin-left: 10px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    height: 100%;
+    width: 90%;
+}
+
+#clear_data {
+    margin-top: 5px;
+}
+
+input[type=text], input[type=password]{
+    border-radius: 5px;
+    border: none;
+}
+
+input[type=text]:focus, input[type=password]:focus{
+    outline: none;
+}

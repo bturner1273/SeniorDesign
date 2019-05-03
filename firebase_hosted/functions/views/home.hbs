@@ -6,20 +6,70 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://oyoclass.s3.amazonaws.com/fontawesome-pro-5.0.13/web-fonts-with-css/css/fontawesome-all.min.css">
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="css/home.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.css">
     </head>
     <body class="bg-dark text-white">
         <nav class="navbar navbar-light bg-dark">
               <a class="navbar-brand" href="#">
                   <img src="https://smart-air-810ae.firebaseapp.com/images/smart_air_logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
-                  <span class="text-white">Smart Air</span>
+                  <span id="user_email" class="text-white"></span>
               </a>
               <div class="btn-group">
-                  <button id="add_device" class="btn btn-secondary" type="button" name="button">Add Device</button>
-                  <button id="sign_out" class="btn btn-danger" type="button" name="button">Sign Out</button>
+                  <button id="add_device" class="btn btn-secondary" type="button" name="button" data-toggle="modal" data-target="#add_device_modal">Add Device</button>
+                  <button id="sign_out" class="btn btn-light" type="button" name="button">Sign Out</button>
               </div>
         </nav>
         <div class="container">
+            <div class="card text-light bg-secondary">
+                <div class="card-body card1">
+                    <div id="plot">
 
+                    </div>
+                    <div class="row">
+                        <div class="col-4"></div>
+                        <button id = "clear_data" class="btn btn-dark col-4" type="button" name="button">Clear Data</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card text-light bg-secondary">
+                <div class="card-body card2">
+                    <h4>Weather in your area</h4>
+                    <div class="row">
+                        <div class="col-3"></div>
+                        <input id="user_city" type="text" class="col-6" name="" value="" placeholder="Your City">
+                        <button id="search_weather" type="button" class="btn btn-dark col-3" name="button">Search Weather</button>
+                    </div>
+                    <div class="text-center">
+                        <h5>Weather: <img id="icon" src="" alt=""></h5>
+                    </div>
+                    <div class="text-center">
+                        <h5>Temperature: <span id="temperature"></span></h5>
+                    </div>
+                    <div class="text-center">
+                        <h5>Humidity: <span id="humidity"></span></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="add_device_modal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content border-dark">
+                  <div class="modal-header bg-secondary border-dark">
+                    <h5 class="modal-title">Add Device</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body bg-dark border-dark text-light">
+                    <label for="device_id">Device ID:</label>
+                    <input id="device_id" type="text" name="" value="" placeholder="eg. 24">
+                  </div>
+                  <div class="modal-footer bg-secondary border-dark">
+                    <button id="connect_user_to_device" type="button" class="btn btn-dark" data-dismiss="modal">Save changes</button>
+                  </div>
+                </div>
+            </div>
         </div>
         <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
         <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
@@ -27,8 +77,11 @@
           src="https://code.jquery.com/jquery-3.4.0.min.js"
           integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
           crossorigin="anonymous"></script>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.js" charset="utf-8"></script>
+        <script src="js/base.js" charset="utf-8"></script>
         <script src="js/firebase.js" charset="utf-8"></script>
         <script type="text/javascript" src="js/home.js"></script>
     </body>

@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    var sign_up = false;
     //binds the login form to submit on enter key press in the password text input
     addInputSubmitEvent($("#sign_up_form"), $("#sign_up_password"));
     addInputSubmitEvent($("#sign_in_form"), $("#password"));
@@ -34,6 +35,9 @@ $(document).ready(function () {
         .catch(
             function (err) {
                 console.log(err);
+                notify.err("Error: " + err.code);
+                $("#email").val("");
+                $("#password").val("");
             }
         )
     });
@@ -59,13 +63,6 @@ $(document).ready(function () {
 
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
-        if (sign_up) {
-            //push user to db
-            uid = user.uid;
-            firebase.database().ref("private/users/" + user.uid).set({
-                email: user.email
-            });
-        }
         // User is signed in.
         window.location = "home.html";
       }
