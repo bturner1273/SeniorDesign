@@ -37,6 +37,9 @@ $(document).ready(function () {
         .catch(
             function (err) {
                 console.log(err);
+                notify.err("Error: " + err.code);
+                $("#email").val("");
+                $("#password").val("");
             }
         )
     });

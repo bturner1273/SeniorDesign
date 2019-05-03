@@ -13,7 +13,7 @@
         <nav class="navbar navbar-light bg-dark">
               <a class="navbar-brand" href="#">
                   <img src="https://smart-air-810ae.firebaseapp.com/images/smart_air_logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
-                  <span class="text-white">User Email</span>
+                  <span id="user_email" class="text-white"></span>
               </a>
               <div class="btn-group">
                   <button id="add_device" class="btn btn-secondary" type="button" name="button" data-toggle="modal" data-target="#add_device_modal">Add Device</button>
@@ -22,13 +22,30 @@
         </nav>
         <div class="container">
             <div class="card text-light bg-secondary">
-                <div class="card-body">
-                    Plotly
+                <div class="card-body card1">
+                    <div id="plot">
+
+                    </div>
+                    <div class="row">
+                        <div class="col-4"></div>
+                        <button id = "clear_data" class="btn btn-dark col-4" type="button" name="button">Clear Data</button>
+                    </div>
                 </div>
             </div>
             <div class="card text-light bg-secondary">
-                <div class="card-body">
-                    Open-Weather-API
+                <div class="card-body card2">
+                    <h4>Weather in your area</h4>
+                    <div class="row">
+                        <div class="col-3"></div>
+                        <input type="text" class="col-6" name="" value="" placeholder="Your City">
+                        <button id="search_weather" type="button" class="btn btn-dark col-3" name="button">Search Weather</button>
+                    </div>
+                    <div class="text-center">
+                        <h5>Temperature: XX degrees Fahrenheit</h5>
+                    </div>
+                    <div class="text-center">
+                        <h5>Humidity: XX%</h5>
+                    </div>
                 </div>
             </div>
         </div>
@@ -57,6 +74,7 @@
           src="https://code.jquery.com/jquery-3.4.0.min.js"
           integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
           crossorigin="anonymous"></script>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.js" charset="utf-8"></script>
